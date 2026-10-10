@@ -9,7 +9,7 @@
       content="Request a heating, plumbing or mechanical service appointment with CA2."
     /><meta property="og:type" content="website"><meta property="og:title" content="Book a Service | CA2"><meta property="og:description" content="Request a heating, plumbing or mechanical service appointment with CA2."><meta property="og:url" content="https://memerrific.github.io/CA2/book.html"><meta property="og:image" content="https://memerrific.github.io/CA2/assets/plant-room-wide.jpg"><meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://memerrific.github.io/CA2/book.html" />
-    <link rel="stylesheet" href="styles.css?v=20261010-7" />
+    <link rel="stylesheet" href="styles.css?v=20261010-8" />
   </head>
   <body class="booking-page">
     <header class="topbar">
@@ -31,17 +31,19 @@
       </nav>
     </header>
     <main class="booking-shell">
-      <a class="back-link" href="index.html">← Back to CA2</a>
       <form class="booking-card" id="booking-form">
-        <div class="booking-progress" aria-live="polite">
+        <aside class="booking-progress" aria-live="polite">
+          <span class="booking-progress-title">Booking progress</span>
           <span class="step-ring" id="step-number">1</span>
           <span id="step-label">Choose a service</span>
           <div class="step-dots" aria-hidden="true">
             <i class="active"></i><i></i><i></i><i></i>
           </div>
-        </div>
+          <button class="booking-control-back" id="booking-control-back" type="button" hidden>← Previous step</button>
+          <a class="booking-home-link" href="index.html">Back to CA2</a>
+        </aside>
+        <div class="booking-content">
         <section class="booking-step active" data-step="1">
-          <div class="eyebrow">Book a service</div>
           <h1>What can we help with?</h1>
           <div class="choice-grid">
             <button type="button" data-value="Heating or plumbing repair">
@@ -74,8 +76,6 @@
           <input type="hidden" name="service" id="service-choice" />
         </section>
         <section class="booking-step" data-step="2">
-          <button class="step-back" type="button" data-back="1">← Back</button>
-          <div class="eyebrow">Property</div>
           <h1>Which describes you?</h1>
           <div class="choice-grid">
             <button type="button" data-value="Homeowner">
@@ -91,8 +91,6 @@
           <input type="hidden" name="customer_type" id="customer-choice" />
         </section>
         <section class="booking-step" data-step="3">
-          <button class="step-back" type="button" data-back="2">← Back</button>
-          <div class="eyebrow">Preferred visit</div>
           <h1>Choose a preferred slot.</h1>
           <p>
             This mock calendar shows how future Thursday and Friday service
@@ -112,8 +110,6 @@
           </div>
         </section>
         <section class="booking-step" data-step="4">
-          <button class="step-back" type="button" data-back="3">← Back</button>
-          <div class="eyebrow">Your details</div>
           <h1>Where should we confirm?</h1>
           <div class="form-stack">
             <label>Name<input name="name" required /></label
@@ -136,7 +132,6 @@
           </p>
         </section>
         <section class="booking-step" data-step="5">
-          <div class="eyebrow">Request prepared</div>
           <h1>Your email app should now open.</h1>
           <p>
             Send the prepared message and CA2 will confirm the appointment. Your
@@ -144,8 +139,9 @@
           </p>
           <a class="btn secondary" href="index.html">Return home</a>
         </section>
+        </div>
       </form>
     </main>
-    <script src="script.js?v=20261010-6"></script>
+    <script src="script.js?v=20261010-8"></script>
   </body>
 </html>

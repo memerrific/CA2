@@ -105,12 +105,12 @@ if (!document.querySelector(".footer-services") && !document.querySelector(".sta
   document.querySelector("footer.footer")?.remove();
   document.body.insertAdjacentHTML(
     "beforeend",
-    `<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br>Registered office: 124 City Road, London City Road, London, England, EC1V 2NX<br><a href="case-studies.html">Projects</a> · <a href="blog.html">Guides</a> · <a href="faq.html">FAQs</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>`,
+    `<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br><a href="case-studies.html">Projects</a> · <a href="blog.html">Guides</a> · <a href="faq.html">FAQs</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>`,
   );
 }
 
 if (document.querySelector(".status-page") && !document.querySelector("footer.footer")) {
-  document.body.insertAdjacentHTML("beforeend", '<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br>Registered office: 124 City Road, London City Road, London, England, EC1V 2NX<br><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>');
+  document.body.insertAdjacentHTML("beforeend", '<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>');
 }
 
 if (!document.querySelector(".mobile-cta")) {
@@ -214,7 +214,9 @@ if (bookingForm) {
       .forEach((dot, index) =>
         dot.classList.toggle("active", index < visibleStep),
       );
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const backControl = document.querySelector("#booking-control-back");
+    if (backControl) backControl.hidden = step <= 1;
+    document.querySelector(".booking-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const subchoices = {
     "boiler-service": [
@@ -281,13 +283,9 @@ if (bookingForm) {
       subchoice.hidden = true;
       mainChoices.hidden = false;
     });
-  document
-    .querySelectorAll("[data-back]")
-    .forEach((button) =>
-      button.addEventListener("click", () =>
-        showStep(Number(button.dataset.back)),
-      ),
-    );
+  document.querySelector("#booking-control-back")?.addEventListener("click", () => {
+    if (step > 1) showStep(step - 1);
+  });
   document
     .querySelectorAll('.booking-step[data-step="2"] .choice-grid button')
     .forEach((button) =>
