@@ -104,7 +104,8 @@ img {
 .links > a,
 .nav-dropdown > button { font-size: 0.84rem; line-height: 1; }
 .links a:hover,
-.links a[aria-current="page"] {
+.links a[aria-current="page"],
+.nav-dropdown > button[aria-current="page"] {
   color: var(--orange);
 }
 .cta,

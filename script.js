@@ -39,23 +39,38 @@ if (!robotsMeta.includes("noindex")) {
   });
 }
 
+const pageName = location.pathname.split("/").pop() || "index.html";
 const primaryLinks = document.querySelector(".links");
-if (primaryLinks && !primaryLinks.querySelector(".nav-dropdown")) {
-  const simpleServices = [...primaryLinks.children].find(
-    (item) => item.tagName === "A" && item.textContent.trim() === "Services",
-  );
-  if (simpleServices) {
-    const dropdown = document.createElement("div");
-    dropdown.className = "nav-dropdown";
-    dropdown.innerHTML = '<button type="button">Services</button><div class="nav-menu"><a href="systems.html">Mechanical &amp; Electrical</a><a href="plumbing.html">Plumbing &amp; Heating</a><a href="renovations.html">Renovations &amp; Interiors</a></div>';
-    simpleServices.replaceWith(dropdown);
+if (primaryLinks) {
+  primaryLinks.innerHTML = `
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <button type="button">Services</button>
+      <div class="nav-menu">
+        <a href="systems.html">Mechanical &amp; Electrical</a>
+        <a href="plumbing.html">Plumbing &amp; Heating</a>
+        <a href="renovations.html">Renovations &amp; Interiors</a>
+      </div>
+    </div>
+    <a href="case-studies.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Guides</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>`;
+
+  const activePage = {
+    "index.html": "index.html",
+    "case-studies.html": "case-studies.html",
+    "about.html": "about.html",
+    "blog.html": "blog.html",
+    "contact.html": "contact.html",
+    "terms.html": "terms.html",
+  }[pageName];
+  primaryLinks.querySelectorAll("[aria-current]").forEach((link) => link.removeAttribute("aria-current"));
+  if (activePage) primaryLinks.querySelector(`a[href="${activePage}"]`)?.setAttribute("aria-current", "page");
+  if (["systems.html", "plumbing.html", "renovations.html", "bathrooms-kitchens.html"].includes(pageName)) {
+    primaryLinks.querySelector(".nav-dropdown > button")?.setAttribute("aria-current", "page");
   }
-}
-if (primaryLinks && !primaryLinks.querySelector('a[href="terms.html"]')) {
-  const termsLink = document.createElement("a");
-  termsLink.href = "terms.html";
-  termsLink.textContent = "Terms";
-  primaryLinks.append(termsLink);
 }
 
 const homepageAbout = document.querySelector(".split#about");
@@ -67,19 +82,6 @@ if (homepageAbout && responseStrip && homepageFaq && homepageProcess) {
   homepageFaq.after(responseStrip);
   responseStrip.after(homepageProcess);
 }
-if (primaryLinks) {
-  primaryLinks.querySelectorAll('a[href="index.html#work"]').forEach((link) => {
-    link.href = "case-studies.html";
-  });
-  if (!primaryLinks.querySelector('a[href="blog.html"]')) {
-    const guideLink = document.createElement("a");
-    guideLink.href = "blog.html";
-    guideLink.textContent = "Guides";
-    const contactLink = primaryLinks.querySelector('a[href="contact.html"]');
-    primaryLinks.insertBefore(guideLink, contactLink || null);
-  }
-}
-
 const breadcrumbLabels = {
   "systems.html": "Mechanical & Electrical",
   "plumbing.html": "Plumbing & Heating",
@@ -90,7 +92,6 @@ const breadcrumbLabels = {
   "book.html": "Book a service",
   "terms.html": "Terms & Conditions",
 };
-const pageName = location.pathname.split("/").pop() || "index.html";
 const pageHero = document.querySelector("main > .page-hero");
 if (pageHero && !document.querySelector(".breadcrumb") && breadcrumbLabels[pageName]) {
   pageHero.insertAdjacentHTML("beforebegin", `<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>${breadcrumbLabels[pageName]}</span></nav>`);
