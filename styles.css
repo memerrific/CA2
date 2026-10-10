@@ -776,12 +776,13 @@ img {
 .mini-faq details[open] summary:after, .faq-list details[open] summary:after { content: "−"; }
 .mini-faq details p, .faq-list details p { padding: 0 20px 18px; margin: 0; color: #566268; font-size: .86rem; }
 .faq-list { max-width: 960px; margin: 0 auto; }
-.project-process { padding: 70px 0; background: #e7e9e7; color: #172127; }
-.process-layout { display: grid; grid-template-columns: minmax(250px,.58fr) minmax(0,1.42fr); gap: 4vw; align-items: center; }
-.process-intro h2 { font-size: clamp(1.9rem,3vw,3.2rem); line-height: 1; letter-spacing: -.04em; margin: 10px 0 16px; }
+.project-process { padding: 52px 0; background: #e7e9e7; color: #172127; }
+.project-process .process-layout { width: calc(100% - 64px); max-width: none; }
+.process-layout { display: grid; grid-template-columns: minmax(260px,.8fr) minmax(0,3.2fr); gap: 30px; align-items: center; }
+.process-intro h2 { font-size: clamp(1.75rem,2.2vw,2.65rem); line-height: 1; letter-spacing: -.04em; margin: 10px 0 16px; }
 .process-intro p { max-width: 460px; color: #59656a; }
 .process-intro small { display: block; margin-top: 24px; color: #7a8589; font-weight: 700; }
-.process-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; background: none; perspective: 1100px; }
+.process-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; background: none; perspective: 1100px; }
 .process-card { position: relative; min-height: 225px; cursor: pointer; outline: none; perspective: 900px; touch-action: manipulation; }
 .process-card-inner { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.75,.25,1); }
 .process-card.is-flipped .process-card-inner { transform: rotateY(180deg); }
