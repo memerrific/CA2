@@ -118,15 +118,22 @@ if (!document.querySelector(".mobile-cta")) {
 }
 
 document.querySelectorAll(".process-card").forEach((card) => {
-  const toggleCard = () => {
-    const isFlipped = card.classList.toggle("is-flipped");
+  const setCardState = (isFlipped) => {
+    card.classList.toggle("is-flipped", isFlipped);
     card.setAttribute("aria-pressed", String(isFlipped));
   };
-  card.addEventListener("click", toggleCard);
+
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    card.addEventListener("pointerenter", () => setCardState(true));
+  }
+
+  card.addEventListener("click", () => {
+    setCardState(!card.classList.contains("is-flipped"));
+  });
   card.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
-    toggleCard();
+    setCardState(!card.classList.contains("is-flipped"));
   });
 });
 
