@@ -58,20 +58,21 @@ img {
   color: #fff;
 }
 .nav {
-  height: 78px;
-  display: flex;
+  height: 88px;
+  display: grid;
+  grid-template-columns: minmax(230px, 1fr) auto minmax(230px, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 .brand {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  justify-self: start;
 }
 .brand-logo {
   width: auto;
-  height: 56px;
+  height: 70px;
   object-fit: contain;
 }
 .mark {
@@ -92,12 +93,16 @@ img {
 .links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  justify-content: center;
+  gap: 20px;
   font-size: 0.84rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  justify-self: center;
 }
+.links > a,
+.nav-dropdown > button { font-size: 0.84rem; line-height: 1; }
 .links a:hover,
 .links a[aria-current="page"] {
   color: var(--orange);
@@ -731,7 +736,7 @@ img {
 }
 .slim-footer .brand small,
 .slim-footer .legal a { color: #aeb7bb; }
-.slim-footer .brand-logo { height: 64px; }
+.slim-footer .brand-logo { height: 52px; }
 .footer-bottom .legal a:hover {
   color: var(--orange);
 }
@@ -941,6 +946,7 @@ main:has(> .guide), main:has(> .policy) { background: #eef0ee; }
   display: flex;
   align-items: center;
   gap: 18px;
+  justify-self: end;
 }
 .nav-contact {
   font-size: 0.76rem;
@@ -1261,6 +1267,7 @@ textarea {
   }
   .menu {
     display: block;
+    justify-self: center;
   }
 }
 @media (max-width: 900px) {
@@ -1342,10 +1349,12 @@ textarea {
     width: min(calc(100% - 28px), var(--max));
   }
   .nav {
-    height: 66px;
+    height: 72px;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
   }
-  .brand-logo { height: 46px; }
-  .slim-footer .brand-logo { height: 58px; }
+  .brand-logo { height: 56px; }
+  .slim-footer .brand-logo { height: 46px; }
   .nav > .cta {
     display: none;
   }

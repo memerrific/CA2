@@ -2,7 +2,7 @@ document.querySelector(".menu")?.addEventListener("click", () => {
   const n = document.querySelector(".links");
   n.style.display = n.style.display === "flex" ? "none" : "flex";
   n.style.position = "absolute";
-  n.style.top = "66px";
+  n.style.top = `${document.querySelector(".topbar")?.offsetHeight || 72}px`;
   n.style.left = "0";
   n.style.right = "0";
   n.style.padding = "24px";
