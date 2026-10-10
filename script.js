@@ -100,7 +100,7 @@ if (pageHero && !document.querySelector(".breadcrumb") && breadcrumbLabels[pageN
 if (!document.querySelector(".footer-services") && !document.querySelector(".status-page")) {
   document.querySelector("main")?.insertAdjacentHTML(
       "afterend",
-      `<section class="footer-services" id="contact"><div class="footer-accreditations"><div class="eyebrow">Qualifications & launch direction</div><div class="footer-logos"><div><img src="assets/oftec.png" alt="OFTEC"><span>OFTEC</span></div><div class="mcs-mark">MCS<span>Launch direction</span></div><div><img src="assets/heat-geek.png" alt="Heat Geek"><span>Heat Geek</span></div><div><img src="assets/lcl-awards.png" alt="LCL Awards"><span>LCL Awards</span></div></div></div><div class="footer-service-columns"><div class="footer-service"><div class="eyebrow">Mechanical & electrical</div><h3>Systems</h3><ul><li>System design & specification</li><li>Heat-loss calculations</li><li>Pipe sizing & hydraulics</li><li>Heat pumps & low-temperature systems</li><li>Oil and electric boilers</li><li>Plant rooms, cylinders & thermal storage</li><li>UFH, controls & system wiring</li><li>Ventilation & air conditioning</li></ul></div><div class="footer-service"><div class="eyebrow">Plumbing & heating</div><h3>Installation & support</h3><ul><li>Full heating installations</li><li>Boiler and system conversions</li><li>Unvented hot water</li><li>Water treatment & filtration</li><li>Accumulator tanks & booster sets</li><li>System cleaning</li><li>Fault finding & maintenance</li></ul></div><div class="footer-service"><div class="eyebrow">Renovations & interiors</div><h3>Complete projects</h3><ul><li>Whole-house renovations</li><li>Bespoke bathrooms</li><li>Bespoke kitchens</li><li>Utilities and service routes</li><li>Trade coordination</li></ul></div><div class="footer-service contact-box"><div class="eyebrow">Contact CA2</div><h3>Discuss a project</h3><ul class="contact-list"><li><a href="tel:07507038346">07507 038346</a></li><li><a href="mailto:enquiries@ca2plumbing.com">Email CA2</a></li><li><a href="https://wa.me/447507038346">WhatsApp</a></li><li><span>LinkedIn — link to add</span></li><li>Sussex</li></ul></div></div></section>`,
+      `<section class="footer-services" id="contact"><div class="footer-accreditations"><div class="eyebrow">Qualifications & launch direction</div><div class="footer-logos"><div><img src="assets/oftec.png" alt="OFTEC"><span>OFTEC</span></div><div><img class="logo-knockout" src="assets/mcs-certified.png" alt="MCS certification pathway"><span>Launch direction</span></div><div><img class="logo-knockout" src="assets/heat-geek.png" alt="Heat Geek"><span>Heat Geek</span></div><div><img src="assets/lcl-awards.png" alt="LCL Awards"><span>LCL Awards</span></div></div></div><div class="footer-service-columns"><div class="footer-service"><div class="eyebrow">Mechanical & electrical</div><h3>Systems</h3><ul><li>System design & specification</li><li>Heat-loss calculations</li><li>Pipe sizing & hydraulics</li><li>Heat pumps & low-temperature systems</li><li>Oil and electric boilers</li><li>Plant rooms, cylinders & thermal storage</li><li>UFH, controls & system wiring</li><li>Ventilation & air conditioning</li></ul></div><div class="footer-service"><div class="eyebrow">Plumbing & heating</div><h3>Installation & support</h3><ul><li>Full heating installations</li><li>Boiler and system conversions</li><li>Unvented hot water</li><li>Water treatment & filtration</li><li>Accumulator tanks & booster sets</li><li>System cleaning</li><li>Fault finding & maintenance</li></ul></div><div class="footer-service"><div class="eyebrow">Renovations & interiors</div><h3>Complete projects</h3><ul><li>Whole-house renovations</li><li>Bespoke bathrooms</li><li>Bespoke kitchens</li><li>Utilities and service routes</li><li>Trade coordination</li></ul></div><div class="footer-service contact-box"><div class="eyebrow">Contact CA2</div><h3>Discuss a project</h3><ul class="contact-list"><li><a href="tel:07507038346">07507 038346</a></li><li><a href="mailto:enquiries@ca2plumbing.com">Email CA2</a></li><li><a href="https://wa.me/447507038346">WhatsApp</a></li><li><span>LinkedIn — link to add</span></li><li>Sussex</li></ul></div></div></section>`,
     );
   document.querySelector("footer.footer")?.remove();
   document.body.insertAdjacentHTML(
@@ -116,6 +116,19 @@ if (document.querySelector(".status-page") && !document.querySelector("footer.fo
 if (!document.querySelector(".mobile-cta")) {
   document.body.insertAdjacentHTML("beforeend", '<a class="mobile-cta" href="book.html">Book a service</a>');
 }
+
+document.querySelectorAll(".process-card").forEach((card) => {
+  const toggleCard = () => {
+    const isFlipped = card.classList.toggle("is-flipped");
+    card.setAttribute("aria-pressed", String(isFlipped));
+  };
+  card.addEventListener("click", toggleCard);
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    toggleCard();
+  });
+});
 
 document.querySelectorAll(".load-embed").forEach((button) => {
   button.addEventListener("click", () => {
