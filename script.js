@@ -42,16 +42,6 @@ if (!robotsMeta.includes("noindex")) {
 const pageName = location.pathname.split("/").pop() || "index.html";
 
 const imageSlotMap = {
-  "index.html": {
-    selector: ".cards .card > img",
-    labels: [
-      "Recent Projects 1",
-      "Recent Projects 2",
-      "Recent Projects 3",
-      "Recent Projects 4",
-      "Recent Projects 5",
-    ],
-  },
   "about.html": {
     selector: ".split > img",
     labels: ["About CA2 1"],
@@ -67,10 +57,6 @@ const imageSlotMap = {
   "renovations.html": {
     selector: ".split > img",
     labels: ["Renovations & Interiors 1"],
-  },
-  "case-studies.html": {
-    selector: ".case-study > img",
-    labels: ["Projects 1", "Projects 2", "Projects 3"],
   },
   "blog-combi-pressure.html": {
     selector: ".guide > img",
@@ -119,6 +105,118 @@ if (imageSlotConfig) {
     slot.dataset.imageSlot = imageSlotConfig.labels[index] || `Image ${index + 1}`;
     image.before(slot);
     slot.append(image);
+  });
+}
+
+const projectGalleries = {
+  mechanical: {
+    title: "Mechanical systems",
+    folder: "mechanical",
+    prefix: "mechanical",
+    count: 14,
+  },
+  renovations: {
+    title: "House renovations",
+    folder: "renovations",
+    prefix: "renovations",
+    count: 5,
+  },
+  bathrooms: {
+    title: "Bathrooms & kitchens",
+    folder: "bathrooms",
+    prefix: "bathrooms",
+    count: 9,
+  },
+  "heat-pumps": {
+    title: "Heat pumps",
+    folder: "heat-pumps",
+    prefix: "heat-pumps",
+    count: 1,
+  },
+  controls: {
+    title: "Controls & distribution",
+    folder: "controls",
+    prefix: "controls",
+    count: 3,
+  },
+};
+
+const galleryTriggers = document.querySelectorAll("[data-project-gallery]");
+if (galleryTriggers.length) {
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `<dialog class="project-gallery-dialog" aria-labelledby="project-gallery-title">
+      <div class="project-gallery-shell">
+        <header><div><span>CA2 project gallery</span><h2 id="project-gallery-title"></h2></div><button class="gallery-close" type="button" aria-label="Close gallery">×</button></header>
+        <div class="gallery-stage">
+          <button class="gallery-nav gallery-prev" type="button" aria-label="Previous photograph">←</button>
+          <img class="gallery-main-image" src="" alt="" />
+          <button class="gallery-nav gallery-next" type="button" aria-label="Next photograph">→</button>
+        </div>
+        <div class="gallery-meta"><span class="gallery-position"></span><span>Use the arrows or select a thumbnail</span></div>
+        <div class="gallery-thumbnails" aria-label="Gallery thumbnails"></div>
+      </div>
+    </dialog>`,
+  );
+
+  const dialog = document.querySelector(".project-gallery-dialog");
+  const title = dialog.querySelector("#project-gallery-title");
+  const mainImage = dialog.querySelector(".gallery-main-image");
+  const position = dialog.querySelector(".gallery-position");
+  const thumbnails = dialog.querySelector(".gallery-thumbnails");
+  const previous = dialog.querySelector(".gallery-prev");
+  const next = dialog.querySelector(".gallery-next");
+  let activeGallery;
+  let activeIndex = 0;
+
+  const galleryImage = (gallery, index) => {
+    const number = String(index + 1).padStart(2, "0");
+    return `assets/projects/${gallery.folder}/${gallery.prefix}-${number}.jpg`;
+  };
+
+  const showGalleryImage = (index) => {
+    if (!activeGallery) return;
+    activeIndex = (index + activeGallery.count) % activeGallery.count;
+    mainImage.src = galleryImage(activeGallery, activeIndex);
+    mainImage.alt = `${activeGallery.title} project photograph ${activeIndex + 1} of ${activeGallery.count}`;
+    position.textContent = `${activeIndex + 1} / ${activeGallery.count}`;
+    thumbnails.querySelectorAll("button").forEach((button, buttonIndex) => {
+      const isCurrent = buttonIndex === activeIndex;
+      button.classList.toggle("is-current", isCurrent);
+      button.setAttribute("aria-current", isCurrent ? "true" : "false");
+      if (isCurrent) button.scrollIntoView({ block: "nearest", inline: "center" });
+    });
+  };
+
+  const openGallery = (galleryKey) => {
+    activeGallery = projectGalleries[galleryKey];
+    if (!activeGallery) return;
+    title.textContent = activeGallery.title;
+    thumbnails.innerHTML = Array.from({ length: activeGallery.count }, (_, index) =>
+      `<button type="button" aria-label="View photograph ${index + 1}"><img src="${galleryImage(activeGallery, index)}" alt="" loading="lazy" /></button>`,
+    ).join("");
+    thumbnails.querySelectorAll("button").forEach((button, index) => button.addEventListener("click", () => showGalleryImage(index)));
+    previous.hidden = activeGallery.count === 1;
+    next.hidden = activeGallery.count === 1;
+    showGalleryImage(0);
+    dialog.showModal();
+  };
+
+  galleryTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openGallery(trigger.dataset.projectGallery);
+    });
+  });
+  previous.addEventListener("click", () => showGalleryImage(activeIndex - 1));
+  next.addEventListener("click", () => showGalleryImage(activeIndex + 1));
+  dialog.querySelector(".gallery-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showGalleryImage(activeIndex - 1);
+    if (event.key === "ArrowRight") showGalleryImage(activeIndex + 1);
   });
 }
 
