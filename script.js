@@ -40,6 +40,88 @@ if (!robotsMeta.includes("noindex")) {
 }
 
 const pageName = location.pathname.split("/").pop() || "index.html";
+
+const imageSlotMap = {
+  "index.html": {
+    selector: ".cards .card > img",
+    labels: [
+      "Recent Projects 1",
+      "Recent Projects 2",
+      "Recent Projects 3",
+      "Recent Projects 4",
+      "Recent Projects 5",
+    ],
+  },
+  "about.html": {
+    selector: ".split > img",
+    labels: ["About CA2 1"],
+  },
+  "systems.html": {
+    selector: ".split > img",
+    labels: ["Mechanical & Electrical 1"],
+  },
+  "plumbing.html": {
+    selector: ".split > img",
+    labels: ["Plumbing & Heating 1"],
+  },
+  "renovations.html": {
+    selector: ".split > img",
+    labels: ["Renovations & Interiors 1"],
+  },
+  "case-studies.html": {
+    selector: ".case-study > img",
+    labels: ["Projects 1", "Projects 2", "Projects 3"],
+  },
+  "blog-combi-pressure.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Combi Water Pressure"],
+  },
+  "blog-heat-pump-ready.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Heat-Pump Ready"],
+  },
+  "blog-underfloor-heating.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Underfloor Heating"],
+  },
+  "blog-heat-loss-calculations.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Heat-Loss Calculations"],
+  },
+  "blog-weather-compensation.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Weather Compensation"],
+  },
+  "blog-water-pressure-boosting.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Water Pressure"],
+  },
+  "blog-radiator-sizing.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Radiator Sizing"],
+  },
+  "blog-combi-or-cylinder.html": {
+    selector: ".guide > img",
+    labels: ["Guide: Combi or Cylinder"],
+  },
+  "blog-system-cleaning.html": {
+    selector: ".guide > img",
+    labels: ["Guide: System Cleaning"],
+  },
+};
+
+const imageSlotConfig = imageSlotMap[pageName];
+if (imageSlotConfig) {
+  document.querySelectorAll(imageSlotConfig.selector).forEach((image, index) => {
+    if (image.parentElement?.classList.contains("image-slot")) return;
+    const slot = document.createElement("span");
+    slot.className = "image-slot";
+    slot.dataset.imageSlot = imageSlotConfig.labels[index] || `Image ${index + 1}`;
+    image.before(slot);
+    slot.append(image);
+  });
+}
+
 const primaryLinks = document.querySelector(".links");
 if (primaryLinks) {
   primaryLinks.innerHTML = `
