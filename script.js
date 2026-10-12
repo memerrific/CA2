@@ -174,6 +174,52 @@ if (galleryTriggers.length) {
     return `assets/projects/${gallery.folder}/${gallery.prefix}-${number}.jpg`;
   };
 
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const previewCards = document.querySelectorAll(".card[data-project-gallery], .project-gallery-card[data-project-gallery]");
+    const visibleCards = new WeakSet();
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleCards.add(entry.target);
+        else visibleCards.delete(entry.target);
+      });
+    }, { rootMargin: "120px" });
+
+    previewCards.forEach((card, cardIndex) => {
+      const gallery = projectGalleries[card.dataset.projectGallery];
+      const firstImage = card.querySelector(":scope > img");
+      if (!gallery || gallery.count < 2 || !firstImage) return;
+
+      const matchedNumber = firstImage.getAttribute("src")?.match(/-(\d{2})\.jpg$/)?.[1];
+      let currentIndex = matchedNumber ? Number(matchedNumber) - 1 : 0;
+      let currentImage = firstImage;
+      let incomingImage = firstImage.cloneNode();
+      currentImage.classList.add("project-slide", "project-slide-base", "is-current");
+      incomingImage.classList.add("project-slide", "project-slide-overlay");
+      incomingImage.setAttribute("aria-hidden", "true");
+      card.insertBefore(incomingImage, firstImage.nextSibling);
+      cardObserver.observe(card);
+
+      const advancePreview = async () => {
+        if (!document.hidden && visibleCards.has(card)) {
+          const nextIndex = (currentIndex + 1) % gallery.count;
+          incomingImage.src = galleryImage(gallery, nextIndex);
+          incomingImage.alt = `${gallery.title} project photograph ${nextIndex + 1}`;
+          try { await incomingImage.decode(); } catch (_) {}
+          incomingImage.classList.add("is-current");
+          currentImage.classList.remove("is-current");
+          await new Promise((resolve) => setTimeout(resolve, 1400));
+          currentImage.setAttribute("aria-hidden", "true");
+          incomingImage.removeAttribute("aria-hidden");
+          [currentImage, incomingImage] = [incomingImage, currentImage];
+          currentIndex = nextIndex;
+        }
+        window.setTimeout(advancePreview, 4800);
+      };
+
+      window.setTimeout(advancePreview, 4000 + cardIndex * 550);
+    });
+  }
+
   const showGalleryImage = (index) => {
     if (!activeGallery) return;
     activeIndex = (index + activeGallery.count) % activeGallery.count;
