@@ -11,7 +11,7 @@ PHONE_TEL = "07507038346"
 WHATSAPP = "https://wa.me/447507038346"
 INSTAGRAM = "https://www.instagram.com/ca2plumbing/"
 LINKEDIN = "https://www.linkedin.com/in/callum-anscombe-5901591a3/"
-ASSET_VERSION = "20261015-3"
+ASSET_VERSION = "20261015-6"
 
 ICON_PHONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
 ICON_CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>'
@@ -36,58 +36,51 @@ TOWNS = [
     ("eastbourne", "Eastbourne"),
 ]
 
+def _links(items):
+    return "".join(f'<li><a href="{h}">{t}</a></li>' if h else f"<li>{t}</li>" for t, h in items)
+
+
 FOOTER = f"""<footer class="footer site-footer">
-      <div class="wrap site-footer-grid">
-        <div class="site-footer-brand">
-          <a class="brand" href="index.html" aria-label="CA2 Mechanical &amp; Electrical home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical &amp; Electrical" loading="lazy" decoding="async" /></a>
-          <p>Heating, renewable and mechanical systems designed and installed across Sussex.</p>
-          <ul class="site-footer-contact">
-            <li><a href="tel:{PHONE_TEL}">{ICON_PHONE}{PHONE_DISPLAY}</a></li>
-            <li><a href="mailto:enquiries@ca2plumbing.com">enquiries@ca2plumbing.com</a></li>
-            <li><a href="{WHATSAPP}">{ICON_CHAT}WhatsApp</a></li>
-          </ul>
-          <div class="site-footer-social">
-            <a href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="CA2 on Instagram">{ICON_INSTAGRAM}</a>
-            <a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="CA2 on LinkedIn">{ICON_LINKEDIN}</a>
+      <section class="footer-services">
+        <div class="footer-accreditations">
+          <div class="eyebrow">Qualifications &amp; training</div>
+          <div class="footer-logos">
+            <div><img src="assets/oftec.png" alt="OFTEC" loading="lazy" decoding="async" /><span>OFTEC</span></div>
+            <div><img class="logo-knockout" src="assets/heat-geek.png" alt="Heat Geek trained" loading="lazy" decoding="async" /><span>Heat Geek trained</span></div>
+            <div><img src="assets/lcl-awards.png" alt="LCL Awards" loading="lazy" decoding="async" /><span>LCL Awards</span></div>
           </div>
         </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="heat-pumps.html">Heat pumps</a></li>
-            <li><a href="oil-boilers.html">Oil boilers</a></li>
-            <li><a href="underfloor-heating.html">Underfloor heating</a></li>
-            <li><a href="water-pressure.html">Water pressure</a></li>
-            <li><a href="systems.html">Mechanical &amp; electrical</a></li>
-            <li><a href="plumbing.html">Plumbing &amp; heating</a></li>
-            <li><a href="renovations.html">Renovations &amp; bathrooms</a></li>
-            <li><a href="projects.html">Recent projects</a></li>
-            <li><a href="book.html">Book a service</a></li>
-          </ul>
+        <div class="footer-service-columns">
+          <div class="footer-service">
+            <div class="eyebrow">Mechanical &amp; electrical</div>
+            <h3><a href="systems.html">Systems</a></h3>
+            <ul>{_links([("System design &amp; specification", "systems.html"), ("Heat-loss calculations", "blog-heat-loss-calculations.html"), ("Pipe sizing &amp; hydraulics", "blog-pipe-sizing.html"), ("Heat pumps &amp; low-temperature systems", "heat-pumps.html"), ("Oil and electric boilers", "oil-boilers.html"), ("Plant rooms, cylinders &amp; thermal storage", "systems.html"), ("UFH, controls &amp; system wiring", "underfloor-heating.html"), ("Ventilation &amp; MVHR", "blog-mvhr.html")])}</ul>
+          </div>
+          <div class="footer-service">
+            <div class="eyebrow">Plumbing &amp; heating</div>
+            <h3><a href="plumbing.html">Installation &amp; support</a></h3>
+            <ul>{_links([("Full heating installations", "plumbing.html"), ("Boiler and system conversions", "blog-combi-conversion.html"), ("Unvented hot water", "blog-unvented-conversion.html"), ("Water pressure &amp; boosting", "water-pressure.html"), ("System cleaning", "blog-system-cleaning.html"), ("Bathrooms, kitchens &amp; renovations", "renovations.html"), ("Fault finding &amp; maintenance", "book.html")])}</ul>
+          </div>
+          <div class="footer-service">
+            <div class="eyebrow">Areas we cover</div>
+            <h3>Across Sussex</h3>
+            <ul>{_links([(name, f"heating-engineer-{slug}.html") for slug, name in TOWNS])}</ul>
+          </div>
+          <div class="footer-service contact-box">
+            <div class="eyebrow">Contact CA2</div>
+            <h3><a href="contact.html">Discuss a project</a></h3>
+            <ul>{_links([(PHONE_DISPLAY, f"tel:{PHONE_TEL}"), ("enquiries@ca2plumbing.com", "mailto:enquiries@ca2plumbing.com"), ("WhatsApp", WHATSAPP), ("Book a service", "book.html")])}</ul>
+            <div class="site-footer-social">
+              <a href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="CA2 on Instagram">{ICON_INSTAGRAM}</a>
+              <a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="CA2 on LinkedIn">{ICON_LINKEDIN}</a>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>Areas we cover</h4>
-          <ul>
-{chr(10).join(f'            <li><a href="heating-engineer-{slug}.html">{name}</a></li>' for slug, name in TOWNS)}
-          </ul>
-        </div>
-        <div>
-          <h4>Guides</h4>
-          <ul>
-            <li><a href="blog-combi-conversion.html">Converting to a combi</a></li>
-            <li><a href="blog-unvented-conversion.html">Vented to unvented</a></li>
-            <li><a href="blog-dynamic-trvs.html">Self-balancing TRVs</a></li>
-            <li><a href="blog-how-combi-boilers-work.html">How a combi works</a></li>
-            <li><a href="blog-how-heat-pumps-work.html">How a heat pump works</a></li>
-            <li><a href="blog-mvhr.html">MVHR explained</a></li>
-            <li><a href="blog.html">All guides</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="wrap site-footer-legal">
+      </section>
+      <div class="site-footer-bar">
+        <a class="brand" href="index.html" aria-label="CA2 Mechanical &amp; Electrical home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical &amp; Electrical" loading="lazy" decoding="async" /></a>
         <p>CA2 Mechanical &amp; Electrical is a trading name of CA2 Heating &amp; Plumbing Ltd. Registered in England and Wales, company no. 12029657. Registered office: 124 City Road, London, EC1V 2NX.</p>
-        <p><a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></p>
+        <nav aria-label="Footer"><a href="case-studies.html">Projects</a><a href="blog.html">Guides</a><a href="faq.html">FAQs</a><a href="about.html">About</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a></nav>
       </div>
     </footer>"""
 

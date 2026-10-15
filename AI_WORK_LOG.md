@@ -36,6 +36,20 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-15 22:15 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `index.html`, `script.js`, `styles.css`, `feed.js`, `case-studies.html`, `systems.html`, `contact.html`, `README.md`, `sitemap.xml`, `data/projects.json` (renamed from `data/instagram.json`), `.github/workflows/instagram.yml`, `tools/site_shared.py`, `tools/fetch_instagram.py`; **removed** `projects.html` and `tools/build_projects.py`; all pages regenerated
+- Completed:
+  - **One footer.** The services/accreditations block and the bottom bar are now a single static footer from `tools/site_shared.py`. "Renovations & interiors" column replaced by "Areas we cover"; services link to their pages. The script no longer injects a second footer block, and the homepage's static copy was removed.
+  - **Homepage order** (now static HTML, the JS reordering was removed): hero → service icons → Recent projects → process → About → FAQs → orange CTA strip.
+  - **Instagram strip removed** from the homepage (Callum: too many photo rows, and projects are to be curated by hand). Recent Projects is manual: `data/projects.json` feeds a hidden-until-populated "Latest jobs" section at the top of `case-studies.html`. `projects.html` deleted; "Projects" in the nav and footer goes to `case-studies.html`. The Instagram workflow is manual-only and writes `data/instagram.json`, which the site does not display.
+  - **Layout:** `.wrap` is now full width with a 32px gutter (14px on mobile) everywhere, so page headings line up with the content (Callum prefers left-to-right, not centred).
+  - **Fixes:** hidden leftover image placeholder labels ("MECHANICAL & ELECTRICAL 1" etc. from `imageSlotMap`); collapsed the empty grey box on the contact page before the Tradify form loads; replaced "Credentials and launch direction" note on `systems.html` with a plain qualifications line; "Ventilation & future services" card rewritten as "Ventilation & MVHR"; Instagram added to contact page.
+- Checks performed: full-page screenshots of 15 pages at 1440px and 390px reviewed; all pages load with no JS errors or horizontal overflow; no broken internal links.
+- Deployment: pushed to `main`.
+- Pending / hand-over: booking page still says "Prototype only" and "mock calendar" by design until booking is connected (Callum said leave for now).
+
 ### 2026-10-15 22:00 Europe/London — Claude
 
 - Commit: included in this commit

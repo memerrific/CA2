@@ -1,9 +1,9 @@
 name: Update Instagram projects
 
+# Off by default: Recent Projects is updated by hand (data/projects.json).
+# Running this by hand only refreshes data/instagram.json, which the site does not show.
 on:
-  schedule:
-    - cron: "17 5 * * *" # daily, early morning UK time
-  workflow_dispatch: # lets you run it by hand from the Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: write

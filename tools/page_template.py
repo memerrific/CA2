@@ -30,7 +30,7 @@ def page(*, slug, title, description, body, crumbs, schema=None, image="assets/p
     <header class="topbar">
       <nav class="nav wrap">
         <a class="brand" href="index.html" aria-label="CA2 Mechanical &amp; Electrical home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical &amp; Electrical" /></a>
-        <div class="links"><a href="index.html">Home</a><a href="systems.html">Services</a><a href="projects.html">Projects</a><a href="blog.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div class="links"><a href="index.html">Home</a><a href="systems.html">Services</a><a href="case-studies.html">Projects</a><a href="blog.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
         <button class="menu" aria-label="Open menu">☰</button>
         <div class="nav-actions">{HEADER_CONTACT}<a class="cta" href="book.html">Book a service</a></div>
       </nav>

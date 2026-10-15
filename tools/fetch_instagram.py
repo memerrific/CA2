@@ -1,10 +1,10 @@
 """Pull recent Instagram posts into the site, so they display natively (no Instagram embed).
 
-Runs daily from .github/workflows/instagram.yml. Needs the INSTAGRAM_TOKEN secret
+Run by hand from .github/workflows/instagram.yml (no schedule). Needs the INSTAGRAM_TOKEN secret
 (a long-lived Instagram API token for the CA2 professional account).
 
 - Downloads each post's photos into assets/instagram/ (resized, re-compressed)
-- Writes data/instagram.json, which projects.html and the homepage read
+- Writes data/instagram.json (not shown on the site; Recent Projects uses data/projects.json, updated by hand)
 - Refreshes the token (valid 60 days) and prints the new one to $GITHUB_OUTPUT
 - Posts whose caption contains #noweb are skipped
 """

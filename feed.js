@@ -1,4 +1,4 @@
-// Recent projects feed: renders posts from data/instagram.json on the site itself,
+// Recent projects: renders the hand-picked posts in data/projects.json on the site itself,
 // with a built-in post viewer (no Instagram embeds, nothing opens Instagram).
 (() => {
   const grids = document.querySelectorAll("[data-feed]");
@@ -105,7 +105,7 @@
     </button>`;
   };
 
-  fetch("data/instagram.json", { cache: "no-cache" })
+  fetch("data/projects.json", { cache: "no-cache" })
     .then((r) => (r.ok ? r.json() : { posts: [] }))
     .then((data) => {
       posts = (data.posts || []).filter((p) => p.images && p.images.length);
@@ -113,6 +113,7 @@
         const limit = Number(grid.dataset.limit) || posts.length;
         const section = grid.closest("[data-feed-section]");
         if (!posts.length) { if (section) section.hidden = true; return; }
+        if (section) section.hidden = false;
         grid.innerHTML = posts.slice(0, limit).map(tile).join("");
         grid.addEventListener("click", (e) => {
           const button = e.target.closest(".feed-tile");
