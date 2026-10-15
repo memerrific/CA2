@@ -36,6 +36,15 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-15 22:13 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `index.html`
+- Completed: Reverted the homepage section order at Callum's request. It is back to: hero → service icons → About CA2 → FAQs → orange CTA strip → process → Recent projects. Callum wants About near the top, so visitors learn who CA2 is before seeing projects. The order is static HTML; there is no JS reordering. All other sweep changes stay.
+- Checks performed: homepage loads with the expected section order and no errors.
+- Deployment: pushed to `main`.
+- Pending / hand-over: don't move About CA2 below projects.
+
 ### 2026-10-15 22:15 Europe/London — Claude
 
 - Commit: included in this commit
