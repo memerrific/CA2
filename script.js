@@ -349,11 +349,19 @@ document.querySelectorAll(".process-card").forEach((card) => {
     card.setAttribute("aria-pressed", String(isFlipped));
   };
 
-  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    card.addEventListener("pointerenter", () => setCardState(true));
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (canHover) {
+    card.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") setCardState(true);
+    });
+    card.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse") setCardState(false);
+    });
   }
 
-  card.addEventListener("click", () => {
+  card.addEventListener("click", (event) => {
+    // A mouse already flips the card on hover, so a click shouldn't flip it straight back.
+    if (canHover && event.pointerType === "mouse") return;
     setCardState(!card.classList.contains("is-flipped"));
   });
   card.addEventListener("keydown", (event) => {
