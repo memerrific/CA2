@@ -278,19 +278,18 @@ if (primaryLinks) {
         <a href="renovations.html">Renovations &amp; Interiors</a>
       </div>
     </div>
-    <a href="case-studies.html">Projects</a>
+    <a href="projects.html">Projects</a>
     <a href="about.html">About</a>
     <a href="blog.html">Guides</a>
-    <a href="contact.html">Contact</a>
-    <a href="terms.html">Terms</a>`;
+    <a href="contact.html">Contact</a>`;
 
   const activePage = {
     "index.html": "index.html",
-    "case-studies.html": "case-studies.html",
+    "projects.html": "projects.html",
+    "case-studies.html": "projects.html",
     "about.html": "about.html",
     "blog.html": "blog.html",
     "contact.html": "contact.html",
-    "terms.html": "terms.html",
   }[pageName];
   primaryLinks.querySelectorAll("[aria-current]").forEach((link) => link.removeAttribute("aria-current"));
   if (activePage) primaryLinks.querySelector(`a[href="${activePage}"]`)?.setAttribute("aria-current", "page");
@@ -326,17 +325,12 @@ if (pageHero && !document.querySelector(".breadcrumb") && breadcrumbLabels[pageN
 if (!document.querySelector(".footer-services") && !document.querySelector(".status-page")) {
   document.querySelector("main")?.insertAdjacentHTML(
       "afterend",
-      `<section class="footer-services" id="contact"><div class="footer-accreditations"><div class="eyebrow">Qualifications & launch direction</div><div class="footer-logos"><div><img src="assets/oftec.png" alt="OFTEC"><span>OFTEC</span></div><div><img class="logo-knockout" src="assets/mcs-certified.png" alt="MCS certification pathway"><span>Launch direction</span></div><div><img class="logo-knockout" src="assets/heat-geek.png" alt="Heat Geek"><span>Heat Geek</span></div><div><img src="assets/lcl-awards.png" alt="LCL Awards"><span>LCL Awards</span></div></div></div><div class="footer-service-columns"><div class="footer-service"><div class="eyebrow">Mechanical & electrical</div><h3>Systems</h3><ul><li>System design & specification</li><li>Heat-loss calculations</li><li>Pipe sizing & hydraulics</li><li>Heat pumps & low-temperature systems</li><li>Oil and electric boilers</li><li>Plant rooms, cylinders & thermal storage</li><li>UFH, controls & system wiring</li><li>Ventilation & air conditioning</li></ul></div><div class="footer-service"><div class="eyebrow">Plumbing & heating</div><h3>Installation & support</h3><ul><li>Full heating installations</li><li>Boiler and system conversions</li><li>Unvented hot water</li><li>Water treatment & filtration</li><li>Accumulator tanks & booster sets</li><li>System cleaning</li><li>Fault finding & maintenance</li></ul></div><div class="footer-service"><div class="eyebrow">Renovations & interiors</div><h3>Complete projects</h3><ul><li>Whole-house renovations</li><li>Bespoke bathrooms</li><li>Bespoke kitchens</li><li>Utilities and service routes</li><li>Trade coordination</li></ul></div><div class="footer-service contact-box"><div class="eyebrow">Contact CA2</div><h3>Discuss a project</h3><ul class="contact-list"><li><a href="tel:07507038346">07507 038346</a></li><li><a href="mailto:enquiries@ca2plumbing.com">Email CA2</a></li><li><a href="https://wa.me/447507038346">WhatsApp</a></li><li><span>LinkedIn — link to add</span></li><li>Sussex</li></ul></div></div></section>`,
+      `<section class="footer-services" id="contact"><div class="footer-accreditations"><div class="eyebrow">Qualifications &amp; training</div><div class="footer-logos"><div><img src="assets/oftec.png" alt="OFTEC"><span>OFTEC</span></div><div><img class="logo-knockout" src="assets/heat-geek.png" alt="Heat Geek trained"><span>Heat Geek trained</span></div><div><img src="assets/lcl-awards.png" alt="LCL Awards"><span>LCL Awards</span></div></div></div><div class="footer-service-columns"><div class="footer-service"><div class="eyebrow">Mechanical & electrical</div><h3>Systems</h3><ul><li>System design & specification</li><li>Heat-loss calculations</li><li>Pipe sizing & hydraulics</li><li>Heat pumps & low-temperature systems</li><li>Oil and electric boilers</li><li>Plant rooms, cylinders & thermal storage</li><li>UFH, controls & system wiring</li><li>Ventilation & air conditioning</li></ul></div><div class="footer-service"><div class="eyebrow">Plumbing & heating</div><h3>Installation & support</h3><ul><li>Full heating installations</li><li>Boiler and system conversions</li><li>Unvented hot water</li><li>Water treatment & filtration</li><li>Accumulator tanks & booster sets</li><li>System cleaning</li><li>Fault finding & maintenance</li></ul></div><div class="footer-service"><div class="eyebrow">Renovations & interiors</div><h3>Complete projects</h3><ul><li>Whole-house renovations</li><li>Bespoke bathrooms</li><li>Bespoke kitchens</li><li>Utilities and service routes</li><li>Trade coordination</li></ul></div><div class="footer-service contact-box"><div class="eyebrow">Contact CA2</div><h3>Discuss a project</h3><ul class="contact-list"><li><a href="tel:07507038346">07507 038346</a></li><li><a href="mailto:enquiries@ca2plumbing.com">Email CA2</a></li><li><a href="https://wa.me/447507038346">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/callum-anscombe-5901591a3/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/ca2plumbing/" target="_blank" rel="noopener">Instagram</a></li><li>Sussex</li></ul></div></div></section>`,
     );
-  document.querySelector("footer.footer")?.remove();
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    `<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br><a href="case-studies.html">Projects</a> · <a href="blog.html">Guides</a> · <a href="faq.html">FAQs</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>`,
-  );
 }
 
 if (document.querySelector(".status-page") && !document.querySelector("footer.footer")) {
-  document.body.insertAdjacentHTML("beforeend", '<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical Services home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical Services"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>');
+  document.body.insertAdjacentHTML("beforeend", '<footer class="footer slim-footer"><div class="footer-bottom"><a class="brand" href="index.html" aria-label="CA2 Mechanical & Electrical home"><img class="brand-logo" src="assets/ca2-mechanical-electrical-logo.png" alt="CA2 Mechanical & Electrical"></a><p>Heating, plumbing and mechanical systems across Sussex.</p><div class="legal">© CA2 Heating & Plumbing Ltd · Company no. 12029657<br><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div></div></footer>');
 }
 
 if (!document.querySelector(".mobile-cta")) {
@@ -507,6 +501,20 @@ if (bookingForm) {
             return option;
           }),
         );
+        const hasGas = options.some((value) => /^(Gas|LPG) /.test(value));
+        let note = subchoice.querySelector(".service-note");
+        if (hasGas) {
+          if (!note) {
+            note = document.createElement("p");
+            note.className = "service-note";
+            subchoice.append(note);
+          }
+          note.innerHTML =
+            "<strong>Gas and LPG work</strong> is carried out and certified by Gas Safe registered engineers we work with. CA2 arranges and coordinates the job; oil work is carried out by CA2 directly.";
+          note.hidden = false;
+        } else if (note) {
+          note.hidden = true;
+        }
         mainChoices.hidden = true;
         subchoice.hidden = false;
       }),

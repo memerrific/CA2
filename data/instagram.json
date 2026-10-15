@@ -1,0 +1,168 @@
+{
+ "source": "site",
+ "posts": [
+  {
+   "id": "site-mechanical",
+   "date": null,
+   "caption": "Plant room and mechanical pipework: heating, oil, thermal storage, cylinders and circulation pumps, installed and labelled for easy maintenance.",
+   "images": [
+    {
+     "src": "assets/projects/mechanical/mechanical-01.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-02.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-03.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-04.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-05.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-06.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-07.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-08.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-09.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-10.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-11.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-12.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-13.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/mechanical/mechanical-14.jpg",
+     "video": false
+    }
+   ]
+  },
+  {
+   "id": "site-bathrooms",
+   "date": null,
+   "caption": "Bespoke bathrooms and kitchens. CA2 handles all the pipework, first fix and preparation, coordinated with the tiler and other trades.",
+   "images": [
+    {
+     "src": "assets/projects/bathrooms/bathrooms-01.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-02.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-03.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-04.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-05.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-06.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-07.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-08.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/bathrooms/bathrooms-09.jpg",
+     "video": false
+    }
+   ]
+  },
+  {
+   "id": "site-renovations",
+   "date": null,
+   "caption": "Coordinated plumbing and heating for complete house renovations, from first fix to the final radiator.",
+   "images": [
+    {
+     "src": "assets/projects/renovations/renovations-01.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/renovations/renovations-02.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/renovations/renovations-03.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/renovations/renovations-04.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/renovations/renovations-05.jpg",
+     "video": false
+    }
+   ]
+  },
+  {
+   "id": "site-heat-pumps",
+   "date": null,
+   "caption": "Heat-pump cylinder and copper pipework for a low-temperature heating upgrade.",
+   "images": [
+    {
+     "src": "assets/projects/heat-pumps/heat-pumps-01.jpg",
+     "video": false
+    }
+   ]
+  },
+  {
+   "id": "site-controls",
+   "date": null,
+   "caption": "Controls, zoning and circulation work, including heat-pump controls and wiring.",
+   "images": [
+    {
+     "src": "assets/projects/controls/controls-01.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/controls/controls-02.jpg",
+     "video": false
+    },
+    {
+     "src": "assets/projects/controls/controls-03.jpg",
+     "video": false
+    }
+   ]
+  }
+ ]
+}

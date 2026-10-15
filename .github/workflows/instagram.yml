@@ -1,0 +1,50 @@
+name: Update Instagram projects
+
+on:
+  schedule:
+    - cron: "17 5 * * *" # daily, early morning UK time
+  workflow_dispatch: # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install Pillow
+
+      - name: Fetch posts
+        id: fetch
+        env:
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python tools/fetch_instagram.py
+
+      - name: Save refreshed token
+        # Optional: add a SECRETS_PAT secret (fine-grained token with "Secrets: read and write"
+        # on this repo) so the Instagram token renews itself and never expires.
+        if: steps.fetch.outputs.token != '' && env.SECRETS_PAT != ''
+        env:
+          SECRETS_PAT: ${{ secrets.SECRETS_PAT }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+          NEW_TOKEN: ${{ steps.fetch.outputs.token }}
+        run: gh secret set INSTAGRAM_TOKEN --body "$NEW_TOKEN" --repo "$GITHUB_REPOSITORY"
+
+      - name: Commit changes
+        run: |
+          git config user.name "CA2 website bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/instagram data/instagram.json
+          if git diff --cached --quiet; then echo "No new posts"; exit 0; fi
+          git commit -m "Update Instagram projects"
+          git push
