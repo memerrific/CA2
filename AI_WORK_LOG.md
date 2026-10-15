@@ -36,6 +36,16 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-15 21:56 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `privacy.html`
+- Completed: Privacy policy now states that enquiry and customer details are kept in CA2's job-management system (CRM) and the legal bases for that; adds a business-transfer clause (records may pass to a new owner if the business is sold, with customers told); sets retention to "normally no longer than 12 months" for enquiries that don't proceed, and "at least six years" for accounting records.
+- Generated pages/source: `privacy.html` is hand-written (not generated).
+- Checks performed: page loads on desktop and mobile with no errors or overflow.
+- Deployment: pushed to `main`.
+- Pending / hand-over: Callum to check the ICO self-assessment for the data protection fee, and to delete non-proceeding enquiries from the CRM after about 12 months so practice matches the policy.
+
 ### 2026-10-15 21:51 Europe/London — Claude
 
 - Commit: included in this commit
