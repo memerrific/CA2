@@ -125,7 +125,7 @@ def apply(path):
         s = head + sep + re.sub(r"<img\b[^>]*>", lazy, body)
 
     # Cache-bust shared assets.
-    s = re.sub(r'(styles\.css|script\.js)\?v=[\w-]+', rf'\1?v={ASSET_VERSION}', s)
+    s = re.sub(r'(styles\.css|script\.js|feed\.js)\?v=[\w-]+', rf'\1?v={ASSET_VERSION}', s)
 
     if s != o:
         open(path, "w", encoding="utf-8").write(s)
