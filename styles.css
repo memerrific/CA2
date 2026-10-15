@@ -1840,3 +1840,8 @@ textarea {
 .form-stack .photo-drop { text-transform: none; letter-spacing: 0; font-size: .86rem; font-weight: 400; }
 .thanks-card h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.02; }
 @media (max-width: 600px) { .status-card.thanks-card { padding: 34px 22px; } }
+/* Latest work strip: full width like the other homepage sections */
+.feed-home .wrap { width: calc(100% - 64px); max-width: none; }
+.feed-grid-home { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+@media (max-width: 600px) { .feed-home .wrap { width: calc(100% - 28px); } .feed-grid-home { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.feed-tile-caption { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }

@@ -8,7 +8,11 @@
     String(text ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const formatDate = (iso) =>
     iso ? new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "";
-  const firstLine = (caption) => (caption || "").split(/\n/)[0].slice(0, 90);
+  const firstLine = (caption) => {
+    const line = (caption || "").split(/\n/)[0].trim();
+    if (line.length <= 80) return line;
+    return `${line.slice(0, 80).replace(/[\s,.;:-]+\S*$/, "")}…`;
+  };
 
   let posts = [];
   let viewer;

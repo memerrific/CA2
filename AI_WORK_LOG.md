@@ -36,6 +36,15 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-15 22:00 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `index.html`, `feed.js`, `styles.css`, all pages (asset version bump to 20261015-3)
+- Completed: Homepage strip heading changed to "Latest work / Fresh from Instagram." (Callum's wording). Strip now spans the full page width like the other homepage sections, with tiles filling the row. Feed tile captions now cut at a word boundary with an ellipsis, three lines maximum.
+- Checks performed: homepage at 1440px and 390px.
+- Deployment: pushed to `main`.
+- Pending / hand-over: the strip still shows the fallback project photos until the Instagram token is added (see README).
+
 ### 2026-10-15 21:56 Europe/London — Claude
 
 - Commit: included in this commit
