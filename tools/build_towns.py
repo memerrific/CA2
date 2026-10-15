@@ -113,11 +113,11 @@ LOCAL = {
 }
 
 SERVICES = [
-    ("Heat pumps &amp; low-temperature heating", "Designed from a room-by-room heat-loss calculation.", "systems.html"),
-    ("Oil boiler servicing &amp; replacement", "OFTEC-qualified service, repair and replacement.", "plumbing.html"),
+    ("Heat pumps &amp; low-temperature heating", "Designed from a room-by-room heat-loss calculation.", "heat-pumps.html"),
+    ("Oil boiler servicing &amp; replacement", "OFTEC-qualified service, repair and replacement.", "oil-boilers.html"),
     ("Boiler and cylinder conversions", "Combi, system or unvented, chosen to suit how you use hot water.", "blog-combi-conversion.html"),
-    ("Underfloor heating", "Designed for screed or suspended timber floors.", "blog-underfloor-heating.html"),
-    ("Water pressure &amp; boosting", "Measured supply, then the right fix.", "blog-water-pressure-boosting.html"),
+    ("Underfloor heating", "Designed for screed or suspended timber floors.", "underfloor-heating.html"),
+    ("Water pressure &amp; boosting", "Measured supply, then the right fix.", "water-pressure.html"),
     ("Bathrooms, kitchens &amp; renovations", "First-fix to final connections, coordinated with other trades.", "renovations.html"),
 ]
 

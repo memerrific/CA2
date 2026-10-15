@@ -36,6 +36,24 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-15 21:51 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `book.html`, `thank-you.html`, `script.js`, `styles.css`, `faq.html`, `privacy.html`, `blog.html`, `sitemap.xml`, all pages (footer legal line, asset version), `assets/` (logo and icons resized), `tools/build_services.py` (new), `tools/build_guides.py`, `tools/build_towns.py`, `tools/site_shared.py`, new pages listed below
+- Completed:
+  - Booking: optional photo upload (up to 6, with previews). Because booking still uses `mailto:`, photos can't be attached; the email notes how many photos there are, and the thank-you page offers a pre-filled WhatsApp button to send them. Revisit when a form service is connected.
+  - Thank-you page: personalised for bookings (`?type=booking&name=&photos=`), shows next steps.
+  - New service pages: `heat-pumps.html`, `oil-boilers.html`, `underfloor-heating.html`, `water-pressure.html` (with FAQPage schema). Linked from the Services dropdown (`script.js` primaryLinks), footer and town pages.
+  - New guides: `blog-how-combi-boilers-work.html`, `blog-how-heat-pumps-work.html`, `blog-oil-boiler-service.html`, `blog-pipe-sizing.html`; listed on `blog.html`.
+  - FAQPage schema added to `faq.html`.
+  - Footer legal line now includes "Registered in England and Wales" and the registered office address (Companies Act website disclosure).
+  - Privacy policy: trading name, LinkedIn, WhatsApp photos and the on-site Instagram copies added; review date updated. Cookie policy checked: still accurate (no non-essential cookies; maps/Tradify are click-to-load).
+  - Logo PNG and service icons resized (about 60% smaller). Project JPGs were already well compressed; no change.
+- Generated pages/source: service pages from `tools/build_services.py`; guides from `tools/build_guides.py`; towns from `tools/build_towns.py`; `projects.html` from `tools/build_projects.py`; shared header contact and footer from `tools/site_shared.py` (re-run after any footer change). Note: `script.js` also rewrites the main nav links at runtime and injects the services/accreditations block on pages without one.
+- Checks performed: internal link check (no missing files); every page loaded on desktop 1440px and mobile 390px with no JS errors or horizontal overflow; booking flow tested end to end with two photos through to the thank-you page.
+- Deployment: pushed to `main` (GitHub Pages).
+- Pending / hand-over: booking still `mailto:` (form service on hold at Callum's request); mock time slots kept for now; Instagram feed needs `INSTAGRAM_TOKEN` secret (see README); Google review rating to be added once 10+ reviews.
+
 ### 2026-10-15 21:45 Europe/London — ChatGPT/Codex
 
 - Commit: included in this commit

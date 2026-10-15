@@ -11,7 +11,7 @@ PHONE_TEL = "07507038346"
 WHATSAPP = "https://wa.me/447507038346"
 INSTAGRAM = "https://www.instagram.com/ca2plumbing/"
 LINKEDIN = "https://www.linkedin.com/in/callum-anscombe-5901591a3/"
-ASSET_VERSION = "20261015-1"
+ASSET_VERSION = "20261015-2"
 
 ICON_PHONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
 ICON_CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>'
@@ -54,10 +54,13 @@ FOOTER = f"""<footer class="footer site-footer">
         <div>
           <h4>Services</h4>
           <ul>
+            <li><a href="heat-pumps.html">Heat pumps</a></li>
+            <li><a href="oil-boilers.html">Oil boilers</a></li>
+            <li><a href="underfloor-heating.html">Underfloor heating</a></li>
+            <li><a href="water-pressure.html">Water pressure</a></li>
             <li><a href="systems.html">Mechanical &amp; electrical</a></li>
             <li><a href="plumbing.html">Plumbing &amp; heating</a></li>
-            <li><a href="renovations.html">Renovations</a></li>
-            <li><a href="bathrooms-kitchens.html">Bathrooms &amp; kitchens</a></li>
+            <li><a href="renovations.html">Renovations &amp; bathrooms</a></li>
             <li><a href="projects.html">Recent projects</a></li>
             <li><a href="book.html">Book a service</a></li>
           </ul>
@@ -74,6 +77,8 @@ FOOTER = f"""<footer class="footer site-footer">
             <li><a href="blog-combi-conversion.html">Converting to a combi</a></li>
             <li><a href="blog-unvented-conversion.html">Vented to unvented</a></li>
             <li><a href="blog-dynamic-trvs.html">Self-balancing TRVs</a></li>
+            <li><a href="blog-how-combi-boilers-work.html">How a combi works</a></li>
+            <li><a href="blog-how-heat-pumps-work.html">How a heat pump works</a></li>
             <li><a href="blog-mvhr.html">MVHR explained</a></li>
             <li><a href="blog.html">All guides</a></li>
             <li><a href="faq.html">FAQs</a></li>
@@ -81,7 +86,7 @@ FOOTER = f"""<footer class="footer site-footer">
         </div>
       </div>
       <div class="wrap site-footer-legal">
-        <p>CA2 Mechanical &amp; Electrical is a trading name of CA2 Heating &amp; Plumbing Ltd · Company no. 12029657</p>
+        <p>CA2 Mechanical &amp; Electrical is a trading name of CA2 Heating &amp; Plumbing Ltd. Registered in England and Wales, company no. 12029657. Registered office: 124 City Road, London, EC1V 2NX.</p>
         <p><a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></p>
       </div>
     </footer>"""

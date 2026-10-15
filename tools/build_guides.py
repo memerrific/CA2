@@ -238,6 +238,214 @@ guide(
 )
 
 
+guide(
+    "blog-how-combi-boilers-work",
+    "How it works",
+    "How a combi boiler works",
+    "Inside a combination boiler: how it switches between heating and hot water, why it condenses, and what common faults mean.",
+    "A combi does two jobs with one burner: it heats your radiators, and it heats mains water on demand for your taps and shower. Understanding how it switches between the two explains most of how it behaves day to day.",
+    "assets/plant-room-detail.jpg",
+    "Copper heating pipework installed by CA2",
+    """
+<h2>Two circuits, one burner</h2>
+<p>Inside a combi are two separate water circuits that never mix:</p>
+<ul>
+<li><strong>The heating circuit:</strong> a sealed loop of water that flows through the boiler and your radiators.</li>
+<li><strong>The hot-water circuit:</strong> fresh mains water that passes through the boiler on its way to your tap.</li>
+</ul>
+<p>A <strong>diverter valve</strong> decides where the boiler's heat goes. Hot water always takes priority, so the heating pauses while a tap is running. You rarely notice, because radiators hold their warmth for a few minutes.</p>
+
+<h2>Heating mode</h2>
+<p>When the thermostat calls for heat, the burner lights and warms the water in the main heat exchanger. The pump circulates it round the radiators and back. The heating circuit is sealed and runs at about 1 to 1.5&nbsp;bar when cold. An <strong>expansion vessel</strong> absorbs the water's expansion as it warms, and a <strong>pressure relief valve</strong> lets water out safely if the pressure ever climbs too high, usually at 3&nbsp;bar.</p>
+
+<h2>Hot-water mode</h2>
+<p>Open a hot tap and a <strong>flow sensor</strong> detects water moving. The diverter valve switches, and hot water from the heating side passes through a small <strong>plate heat exchanger</strong>. Mains water flows through the other side of the plates and is heated on its way to the tap. Close the tap and the boiler switches back to heating.</p>
+<p>This is why there is a short wait for hot water, and why flow is limited by the boiler's size and the mains supply. See <a href="blog-combi-conversion.html">converting to a combi</a> for what that means in practice.</p>
+
+<h2>Why modern boilers condense</h2>
+<p>Burning gas produces water vapour. A condensing boiler uses an extra-large heat exchanger to cool its exhaust until that vapour turns back into water, recovering heat that older boilers sent up the flue. It only condenses when the water returning from the radiators is cool, below roughly 55&nbsp;°C. Run the radiators too hot and the boiler stops condensing and loses efficiency. That's why <a href="blog-weather-compensation.html">weather compensation</a> and lower flow temperatures matter even with a gas boiler.</p>
+<p>The water it produces drains away through the <strong>condensate pipe</strong>. If that pipe runs outside and freezes in a cold snap, the boiler locks out. Correct sizing and insulation prevent it.</p>
+
+<h2>Modulation</h2>
+<p>A modern boiler can turn its burner down, as well as on and off. Combis are often sized for hot water, which needs far more power than heating a home. If the boiler can't turn down far enough, it switches on and off repeatedly on the heating side, which wastes energy and wears parts. Good setup, and choosing a boiler with a wide modulation range, keeps it running steadily.</p>
+
+<h2>What common problems usually mean</h2>
+<ul>
+<li><strong>Pressure keeps dropping:</strong> a leak somewhere on the system, a failing expansion vessel or a weeping relief valve.</li>
+<li><strong>Hot radiators while a tap is running:</strong> often a sticking diverter valve.</li>
+<li><strong>Hot water goes hot and cold:</strong> often scale in the plate heat exchanger, common in hard-water areas, or a flow sensor fault.</li>
+<li><strong>Locks out in freezing weather:</strong> very often a frozen condensate pipe.</li>
+</ul>
+<p>Gas appliance work is carried out by Gas Safe registered engineers.</p>""",
+    "Questions about your boiler?",
+    "We can look at how your system is set up and what would make it run better.",
+    "Book a visit",
+)
+
+guide(
+    "blog-how-heat-pumps-work",
+    "How it works",
+    "How a heat pump works",
+    "How an air source heat pump moves heat from outdoor air into your home, what efficiency (COP) means, and why flow temperature matters so much.",
+    "A heat pump doesn't burn anything. It moves heat that is already in the outdoor air into your heating and hot water, using electricity to do the moving. Done well, it delivers around three units of heat or more for every unit of electricity it uses.",
+    "assets/projects/controls/controls-01.jpg",
+    "Air source heat pump during CA2 controls work",
+    """
+<h2>The refrigeration cycle, in four steps</h2>
+<p>A heat pump works like a fridge in reverse. A refrigerant circulates in a sealed loop and does four things, over and over:</p>
+<ol>
+<li><strong>Evaporate:</strong> outdoor air is blown across a coil containing very cold refrigerant. Even on a freezing day, the air is warmer than the refrigerant, so it absorbs heat and boils into a gas.</li>
+<li><strong>Compress:</strong> the compressor squeezes that gas, which raises its temperature sharply. This is where the electricity goes.</li>
+<li><strong>Condense:</strong> the hot gas passes through a heat exchanger and gives its heat to the water in your heating system, turning back into a liquid.</li>
+<li><strong>Expand:</strong> an expansion valve drops the pressure, the refrigerant becomes very cold again, and the cycle repeats.</li>
+</ol>
+
+<h2>What COP means</h2>
+<p>Efficiency is measured as the <strong>coefficient of performance (COP)</strong>: heat out divided by electricity in. A COP of 3 means 3&nbsp;kWh of heat for every 1&nbsp;kWh of electricity. COP changes with the weather and the water temperature, so the figure to look at is the <strong>seasonal</strong> average across a whole year, often called SCOP or SPF.</p>
+
+<h2>Why flow temperature matters most</h2>
+<p>The harder a heat pump has to lift the temperature, from outdoor air up to your radiator water, the less efficient it is. Running radiators at 35 to 45&nbsp;°C instead of 60 to 70&nbsp;°C is what makes a heat pump cheap to run. That is why the design work matters more than the brand:</p>
+<ul>
+<li>A <a href="blog-heat-loss-calculations.html">room-by-room heat-loss calculation</a> shows what each room needs</li>
+<li><a href="blog-radiator-sizing.html">Radiators sized</a> to deliver it at a low temperature</li>
+<li><a href="blog-pipe-sizing.html">Pipework sized</a> for the larger flow a heat pump needs</li>
+<li><a href="blog-weather-compensation.html">Weather compensation</a> so the water is only as warm as the day requires</li>
+</ul>
+
+<h2>Things that surprise people</h2>
+<ul>
+<li><strong>It runs for longer, more gently.</strong> Radiators feel warm rather than hot, and the house stays at a steady temperature. That is normal and efficient.</li>
+<li><strong>It defrosts itself.</strong> In cold, damp weather, ice forms on the outdoor coil. The unit briefly reverses to melt it, sometimes with a puff of steam.</li>
+<li><strong>Hot water is stored.</strong> A cylinder is heated to around 50&nbsp;°C, with a regular higher-temperature cycle for hygiene.</li>
+<li><strong>Placement matters.</strong> The outdoor unit needs free airflow, a sound base and sensible distance from neighbours. Planning rules on siting and noise apply, and we check them at survey.</li>
+</ul>
+
+<h2>Refrigerants</h2>
+<p>Most current units use R32 or R290 (propane). R290 has a very low environmental impact and can reach higher water temperatures, which helps homes with smaller radiators. Both are sealed in the outdoor unit at the factory on monobloc models, so there is no refrigerant pipework inside your home.</p>
+<h2>Common questions</h2>
+<h3>Does a heat pump work in winter?</h3>
+<p>Yes. Air source heat pumps extract heat from outdoor air well below freezing. Efficiency falls in very cold weather, which the design allows for.</p>
+<h3>Is it noisy?</h3>
+<p>Modern units are quiet, typically a low hum similar to a fridge or the fans of an air conditioner. Placement and a solid base make the biggest difference.</p>""",
+    "Wondering if a heat pump would suit your home?",
+    "We start with the heat loss, so the answer is based on your house rather than a guess.",
+    "Request a heat pump survey",
+)
+
+guide(
+    "blog-oil-boiler-service",
+    "Oil heating",
+    "What happens during an oil boiler service",
+    "A step-by-step look at a full oil boiler service: burner strip-down, nozzle and filter replacement, cleaning, combustion testing and the checks on your tank and oil supply.",
+    "An oil boiler service is more hands-on than people expect. A proper service means taking the burner apart, cleaning the boiler inside, replacing worn parts and proving it burns cleanly before we leave.",
+    "assets/projects/mechanical/mechanical-06.jpg",
+    "Heating plant installed by CA2",
+    """
+<h2>Before the boiler is opened</h2>
+<ul>
+<li><strong>Visual checks:</strong> the boiler casing, flue terminal, ventilation and any signs of leaks, soot or overheating.</li>
+<li><strong>Oil tank:</strong> condition, base, bunding where fitted, contents gauge and any water or sludge in the tank.</li>
+<li><strong>Oil supply line:</strong> pipe condition, the remote-acting fire valve and the line filter.</li>
+<li><strong>Your feedback:</strong> any noises, smells, lockouts or rising oil use since the last service.</li>
+</ul>
+
+<h2>The strip-down</h2>
+<ol>
+<li><strong>Burner removed:</strong> the burner is taken out so the combustion chamber can be reached.</li>
+<li><strong>Nozzle replaced:</strong> the nozzle sprays oil as a fine mist. It wears with use, and a worn nozzle burns poorly and causes soot, so it is replaced every service.</li>
+<li><strong>Filters:</strong> the burner filter and the line filter are cleaned or replaced, so dirt doesn't reach the pump and nozzle.</li>
+<li><strong>Electrodes:</strong> the ignition electrodes are cleaned, checked and set to the correct gap.</li>
+<li><strong>Heat exchanger cleaned:</strong> soot and scale are brushed and vacuumed from the combustion chamber and the baffles are cleaned. A clean heat exchanger transfers heat better and uses less oil.</li>
+<li><strong>Seals and gaskets:</strong> checked and replaced where needed so the boiler reassembles airtight.</li>
+</ol>
+
+<h2>Proving it works</h2>
+<ul>
+<li><strong>Pump pressure</strong> set to the manufacturer's figure for the nozzle fitted</li>
+<li><strong>Combustion analysis:</strong> a flue gas analyser measures CO₂, carbon monoxide, flue temperature and efficiency, and a smoke test checks for unburnt fuel</li>
+<li><strong>Adjustment:</strong> the burner air is tuned until combustion is clean and within the manufacturer's range</li>
+<li><strong>Controls and safety:</strong> thermostats, overheat protection and the boiler's lockout function are tested</li>
+</ul>
+<p>You get a written service record with the readings, which manufacturers and insurers often ask for.</p>
+
+<h2>Signs your boiler needs attention sooner</h2>
+<ul>
+<li>A smell of oil or fumes</li>
+<li>Soot around the flue terminal or black smoke at start-up</li>
+<li>Frequent lockouts, or rumbling and banging when the burner lights</li>
+<li>Using noticeably more oil than usual</li>
+</ul>
+<p>If you smell fumes or suspect a leak, switch the boiler off and get it checked before using it again.</p>
+
+<h2>How long does it take?</h2>
+<p>A full service on a typical domestic oil boiler usually takes around one and a half to two hours, longer if parts need replacing or the boiler hasn't been serviced for a while.</p>
+<h2>Looking after your tank between services</h2>
+<ul>
+<li>Check the tank and the ground around it for oil staining or a smell of oil.</li>
+<li>Keep vegetation clear of the tank and the supply pipe.</li>
+<li>Don't let the tank run very low. The last of the oil can carry water and sludge into the filter.</li>
+<li>After a delivery, give the oil time to settle before relying on the boiler if it starts to struggle.</li>
+</ul>
+<h2>Common questions</h2>
+<h3>Is an annual service really necessary?</h3>
+<p>Yes. Oil burners slowly soot up and nozzles wear, so efficiency drops and the risk of breakdown rises. Most manufacturer warranties also require it.</p>
+<h3>Can you service the tank too?</h3>
+<p>We check the tank's condition and its supply line as part of the service, and we'll advise if anything needs repair or replacement.</p>""",
+    "Due an oil boiler service?",
+    "OFTEC-qualified servicing across Sussex, with a full written record.",
+    "Book an oil boiler service",
+)
+
+guide(
+    "blog-pipe-sizing",
+    "Heating design",
+    "Pipe sizing: why it matters for heat pumps",
+    "Why heat pumps need more water flow than boilers, how pipe size limits the heat a system can carry, and what that means for existing pipework.",
+    "Pipework is the part of a heating system nobody sees, and it is often what limits a heat pump. Heat pumps move heat with a lot of water at a small temperature difference, so pipes that were fine for a boiler can be too small.",
+    "assets/plant-room-close.jpg",
+    "Neatly installed copper pipework and heating equipment",
+    """
+<h2>Heat is flow times temperature difference</h2>
+<p>The heat a pipe carries depends on two things: how much water flows through it, and how much that water cools on its way round. The relationship is simple:</p>
+<p class="formula">Heat (kW) = flow (litres per second) × 4.18 × temperature drop (°C)</p>
+<p>A boiler system typically runs with a 20&nbsp;°C drop between flow and return. A heat pump is designed for around 5&nbsp;°C. To carry the same heat with a quarter of the temperature drop, a heat pump needs about <strong>four times as much water</strong> moving through the pipes.</p>
+
+<h2>Why you can't just pump harder</h2>
+<p>Pushing more water through a small pipe makes it flow faster. Faster water causes noise, wears fittings and needs much more pump pressure, because resistance rises steeply with speed. Designers keep water speed modest, typically below about 1 metre per second in domestic pipework, and size the pipe to suit.</p>
+
+<h2>What a pipe can roughly carry</h2>
+<p>As a guide, at a moderate water speed of about 0.7 metres per second in copper:</p>
+<table class="guide-table">
+<thead><tr><th>Copper pipe</th><th>Approx. heat at 5&nbsp;°C drop (heat pump)</th><th>Approx. heat at 20&nbsp;°C drop (boiler)</th></tr></thead>
+<tbody>
+<tr><td>15&nbsp;mm</td><td>about 2&nbsp;kW</td><td>about 8&nbsp;kW</td></tr>
+<tr><td>22&nbsp;mm</td><td>about 4.5&nbsp;kW</td><td>about 18&nbsp;kW</td></tr>
+<tr><td>28&nbsp;mm</td><td>about 8&nbsp;kW</td><td>about 30&nbsp;kW</td></tr>
+</tbody>
+</table>
+<p>These are indicative only. A real design accounts for pipe length, fittings, valves and the pump's available pressure. The point is the scale: a 22&nbsp;mm main that easily fed a whole house from a boiler may only carry enough heat for part of it at heat-pump temperatures.</p>
+
+<h2>What this means for an existing house</h2>
+<ul>
+<li><strong>Primary pipework</strong> from the heat pump to the cylinder and the main heating circuit is often upsized, commonly to 28&nbsp;mm or larger.</li>
+<li><strong>Branches to individual radiators</strong> carry less heat, and 15&nbsp;mm is often fine. The calculation confirms it.</li>
+<li><strong>Microbore (8 and 10&nbsp;mm)</strong> can work for small radiators, but long runs to larger radiators often need replacing.</li>
+<li><strong>Restrictions</strong> such as old valves, sludge and undersized fittings matter more when flow is higher. Cleaning and the right valves count.</li>
+</ul>
+
+<h2>How we size a system</h2>
+<p>We start from the room-by-room heat loss, work out the flow each radiator needs, then size each section of pipe so the water speed and pressure loss stay within limits. The pump is chosen from the total, and the system is balanced so each radiator gets its share. See <a href="blog-dynamic-trvs.html">self-balancing radiator valves</a>.</p>
+<h2>Common questions</h2>
+<h3>Do I have to replace all my pipework for a heat pump?</h3>
+<p>Usually not. The main circuits and the heat pump connections are most often upsized; many radiator branches can stay. The design shows exactly which sections need changing.</p>
+<h3>Is plastic pipe a problem?</h3>
+<p>No, but plastic pipe of the same nominal size has a smaller bore than copper, so it carries a little less. The design uses the actual internal size.</p>""",
+    "Planning a heat pump?",
+    "We'll check whether your pipework can carry the heat, and size what needs changing.",
+    "Request a design survey",
+)
+
+
 def build():
     for g in GUIDES:
         schema = json.dumps({

@@ -276,6 +276,10 @@ if (primaryLinks) {
         <a href="systems.html">Mechanical &amp; Electrical</a>
         <a href="plumbing.html">Plumbing &amp; Heating</a>
         <a href="renovations.html">Renovations &amp; Interiors</a>
+        <a href="heat-pumps.html">Heat pumps</a>
+        <a href="oil-boilers.html">Oil boilers</a>
+        <a href="underfloor-heating.html">Underfloor heating</a>
+        <a href="water-pressure.html">Water pressure &amp; boosting</a>
       </div>
     </div>
     <a href="projects.html">Projects</a>
@@ -293,7 +297,7 @@ if (primaryLinks) {
   }[pageName];
   primaryLinks.querySelectorAll("[aria-current]").forEach((link) => link.removeAttribute("aria-current"));
   if (activePage) primaryLinks.querySelector(`a[href="${activePage}"]`)?.setAttribute("aria-current", "page");
-  if (["systems.html", "plumbing.html", "renovations.html", "bathrooms-kitchens.html"].includes(pageName)) {
+  if (["systems.html", "plumbing.html", "renovations.html", "bathrooms-kitchens.html", "heat-pumps.html", "oil-boilers.html", "underfloor-heating.html", "water-pressure.html"].includes(pageName)) {
     primaryLinks.querySelector(".nav-dropdown > button")?.setAttribute("aria-current", "page");
   }
 }
@@ -582,6 +586,34 @@ if (bookingForm) {
     if (date.value) showStep(4);
     else document.querySelector(".slot-error")?.removeAttribute("hidden");
   });
+  const photoInput = bookingForm.querySelector('input[name="photos"]');
+  const photoPreviews = bookingForm.querySelector(".photo-previews");
+  let photoFiles = [];
+  const renderPhotos = () => {
+    photoPreviews.replaceChildren(
+      ...photoFiles.map((file, index) => {
+        const item = document.createElement("div");
+        item.className = "photo-preview";
+        const img = document.createElement("img");
+        img.alt = file.name;
+        img.src = URL.createObjectURL(file);
+        img.onload = () => URL.revokeObjectURL(img.src);
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.setAttribute("aria-label", `Remove ${file.name}`);
+        remove.textContent = "×";
+        remove.addEventListener("click", () => { photoFiles.splice(index, 1); renderPhotos(); });
+        item.append(img, remove);
+        return item;
+      }),
+    );
+  };
+  photoInput?.addEventListener("change", () => {
+    const added = Array.from(photoInput.files).filter((file) => file.type.startsWith("image/"));
+    photoFiles = photoFiles.concat(added).slice(0, 6);
+    photoInput.value = "";
+    renderPhotos();
+  });
   bookingForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!bookingForm.reportValidity()) return;
@@ -596,8 +628,28 @@ if (bookingForm) {
       `Email: ${data.get("email")}`,
       `Postcode: ${data.get("postcode")}`,
       `Notes: ${data.get("notes") || "None"}`,
+      `Photos: ${photoFiles.length ? `${photoFiles.length} to follow on WhatsApp` : "None"}`,
     ].join("\n");
     window.location.href = `mailto:enquiries@ca2plumbing.com?subject=${encodeURIComponent("CA2 service booking request")}&body=${encodeURIComponent(body)}`;
-    setTimeout(() => { window.location.href = "thank-you.html"; }, 700);
+    const thanks = new URLSearchParams({ type: "booking", name: String(data.get("name") || "").split(" ")[0] });
+    if (photoFiles.length) thanks.set("photos", String(photoFiles.length));
+    setTimeout(() => { window.location.href = `thank-you.html?${thanks}`; }, 700);
   });
+}
+
+const thanksCard = document.querySelector(".thanks-card");
+if (thanksCard) {
+  const params = new URLSearchParams(location.search);
+  const name = (params.get("name") || "").replace(/[^\p{L}' -]/gu, "").slice(0, 30);
+  const photos = Number(params.get("photos")) || 0;
+  if (params.get("type") === "booking") {
+    thanksCard.querySelector("h1").textContent = name ? `Thanks, ${name}. Your booking request is ready.` : "Your booking request is ready.";
+  }
+  const photoBox = thanksCard.querySelector(".thanks-photos");
+  if (photoBox && photos) {
+    photoBox.hidden = false;
+    photoBox.querySelector("strong").textContent = `You added ${photos} photo${photos > 1 ? "s" : ""}.`;
+    const text = `Hi CA2, here ${photos > 1 ? "are the photos" : "is the photo"} for my booking request${name ? ` (${name})` : ""}.`;
+    photoBox.querySelector("a").href = `https://wa.me/447507038346?text=${encodeURIComponent(text)}`;
+  }
 }
