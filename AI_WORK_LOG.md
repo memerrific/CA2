@@ -86,6 +86,15 @@ After making any change:
 - Deployment: pushed to `main`.
 - Pending / hand-over: Callum to check the ICO self-assessment for the data protection fee, and to delete non-proceeding enquiries from the CRM after about 12 months so practice matches the policy.
 
+### 2026-10-16 Europe/London — Claude
+
+- Commit: included in this commit (branch `work-flow`, not `main`)
+- Files changed: `designer/` (new), `AI_WORK_LOG.md`
+- Completed: Started CA2 Designer, a browser-based heating design and handover pack app (React + TypeScript + Vite) in `designer/`. Polycam DXF / image floor plan import with room tracing; room-by-room heat loss (BS EN 12831 structure) with U-value library; radiator checks and sizing; UFH design (BS EN 1264-2); pipe sizing, pressure drop and Kv; equipment list; branded, printable handover pack. See `designer/README.md`.
+- Checks performed: `npm test` (engine unit tests), `tsc`, production build; every tab driven in Chromium at 1440 px and 390 px with no console errors or horizontal overflow.
+- Deployment: none. Lives on the `work-flow` branch only; the website on `main` / GitHub Pages is unchanged.
+- Pending / hand-over: Test with a real Polycam DXF export; confirm external design temperatures per postcode; consider a separate repo and hosting for the app.
+
 ### 2026-10-15 21:51 Europe/London — Claude
 
 - Commit: included in this commit
