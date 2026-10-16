@@ -146,22 +146,37 @@ img {
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: #08151c;
 }
 .hero:before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(8, 21, 28, 0.98) 0%,
-      rgba(8, 21, 28, 0.88) 36%,
-      rgba(8, 21, 28, 0.16) 72%
-    ),
-    url("assets/plant-room-wide.jpg") center/cover;
+  background-image: url("assets/plant-room-wide-hd.webp?v=20261016-1");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  z-index: 0;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #08151c 0%,
+    rgba(8, 21, 28, 0.99) 34%,
+    rgba(8, 21, 28, 0.9) 48%,
+    rgba(8, 21, 28, 0.42) 68%,
+    rgba(8, 21, 28, 0.08) 84%,
+    rgba(8, 21, 28, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 .hero .wrap {
   position: relative;
+  z-index: 2;
 }
 .hero-copy {
   max-width: 660px;
@@ -1479,9 +1494,17 @@ textarea {
     min-height: 600px;
   }
   .hero:before {
-    background:
-      linear-gradient(90deg, rgba(8, 21, 28, 0.96), rgba(8, 21, 28, 0.5)),
-      url("assets/plant-room-wide.jpg") 60% center/cover;
+    background-image: url("assets/plant-room-wide-hd.webp?v=20261016-1");
+    background-position: 60% center;
+    background-size: cover;
+  }
+  .hero:after {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 21, 28, 0.97) 0%,
+      rgba(8, 21, 28, 0.86) 52%,
+      rgba(8, 21, 28, 0.42) 100%
+    );
   }
   .services {
     grid-template-columns: repeat(2, 1fr);

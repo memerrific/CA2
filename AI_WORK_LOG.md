@@ -36,6 +36,16 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-16 22:32 Europe/London — ChatGPT/Codex
+
+- Commit: included in this commit
+- Files changed: `assets/plant-room-wide-hd.webp`, `assets/icon-heating.png`, `assets/icon-heat-pump.png`, `assets/icon-ufh.png`, `assets/icon-controls.png`, `assets/icon-bathroom.png`, `assets/icon-maintenance.png`, `assets/icon-backups/original-white-background/`, `styles.css`, `index.html`, `AI_WORK_LOG.md`
+- Completed: Restored Callum's untouched 1448×1086 plant-room source as the homepage hero; stopped stretching the photograph across the full desktop viewport; positioned it at the right/bottom and separated the left-to-right dark fade into its own CSS layer. Removed the white canvases from all six homepage service icons and supplied genuine transparent PNG backgrounds. Left the “Oil heating” wording unchanged.
+- Image backups: The six previous white-background icons are preserved under `assets/icon-backups/original-white-background/`.
+- Checks performed: CSS and HTML diff checks passed; hero source dimensions confirmed at 1448×1086; each replacement icon confirmed as a 256×256 RGBA PNG with transparent alpha and visually compared with its original subject.
+- Deployment: pushed to `main` for GitHub Pages.
+- Pending / hand-over: Review the hero on Callum's wide monitor after GitHub Pages refreshes. Keep the image right-aligned and do not restore full-viewport `background-size: cover` on desktop, as that was the source of the visible softness.
+
 ### 2026-10-16 21:18 Europe/London — Claude
 
 - Commit: included in this commit
