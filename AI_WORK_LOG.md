@@ -36,6 +36,14 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-16 21:18 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `assets/ca2-mechanical-electrical-logo.png`
+- Completed: Restored the full-resolution logo (900×278). On 15 Oct I had shrunk it to 486×150 to save page weight, which made it look soft on high-resolution and scaled screens. Do not downscale the logo below about 3× its displayed height (it displays at up to 70px tall).
+- Note: the homepage hero image `assets/plant-room-wide.jpg` is only 1200×900 and is stretched full-width, so it looks soft on wide screens. It has not been changed by Claude. It needs a higher-resolution original (ideally 2400px or more on the long edge) from Callum.
+- Deployment: pushed to `main`.
+
 ### 2026-10-15 22:13 Europe/London — Claude
 
 - Commit: included in this commit
