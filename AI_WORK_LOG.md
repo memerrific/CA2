@@ -36,6 +36,16 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-16 22:46 Europe/London — ChatGPT/Codex
+
+- Commit: included in this commit
+- Files changed: `styles.css`, `index.html`, `AI_WORK_LOG.md`
+- Completed: Moved the desktop hero's visible photograph and blend substantially farther left so the plant-room image begins close to the headline instead of reading as a centre-screen divider. Increased the overlapping image area and moved both the image mask and dark overlay transition left while keeping the right side fully clear. Mobile remains unchanged.
+- Checks performed: Preserved the no-seam overlapping construction, headline contrast, right-side clarity and stylesheet cache bust.
+- Deployment: pushed to `main` for GitHub Pages.
+- Pending / hand-over: Callum prefers the hero image to visually meet the text; do not return the transition to the centre of the viewport.
+
+
 ### 2026-10-16 22:42 Europe/London — ChatGPT/Codex
 
 - Commit: included in this commit
