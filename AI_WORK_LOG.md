@@ -36,6 +36,16 @@ After making any change:
 
 ## Latest entries
 
+### 2026-10-16 22:42 Europe/London — ChatGPT/Codex
+
+- Commit: included in this commit
+- Files changed: `styles.css`, `index.html`, `AI_WORK_LOG.md`
+- Completed: Removed the visible vertical seam in the desktop homepage hero. The high-resolution plant-room image now extends farther beneath the text side and its actual left edge is softened with a CSS transparency mask before the separate dark readability overlay is applied. Mobile retains its existing full-cover treatment without the desktop mask.
+- Checks performed: Confirmed the screenshot's line matched the photograph boundary; preserved the sharp right-hand image, unchanged hero content and unchanged mobile crop; updated the stylesheet cache version.
+- Deployment: pushed to `main` for GitHub Pages.
+- Pending / hand-over: Do not return the desktop photograph to a non-overlapping right-hand panel. The image and dark area must overlap so no physical image edge can become visible.
+
+
 ### 2026-10-16 22:32 Europe/London — ChatGPT/Codex
 
 - Commit: included in this commit
