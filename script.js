@@ -333,11 +333,9 @@ document.querySelectorAll(".process-card").forEach((card) => {
 
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (canHover) {
+    // Flip once on hover and stay flipped, so the detail can be read without holding the mouse there.
     card.addEventListener("pointerenter", (event) => {
       if (event.pointerType === "mouse") setCardState(true);
-    });
-    card.addEventListener("pointerleave", (event) => {
-      if (event.pointerType === "mouse") setCardState(false);
     });
   }
 

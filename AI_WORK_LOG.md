@@ -23,6 +23,14 @@ After making any change:
 ## Entry template
 
 ```text
+### 2026-10-25 Europe/London — Claude (process cards)
+
+- Commit: included in this commit
+- Files changed: `script.js`, `tools/site_shared.py` and all pages (asset version 20261025-3)
+- Completed: "From first conversation to handover" cards (homepage and town pages) now flip once on mouse hover and stay flipped; moving the mouse away no longer flips them back. Touch and keyboard still toggle on tap/Enter.
+- Checks performed: hovered all four cards at 1440px, moved the mouse away; all stayed flipped; clicking does not flip back.
+- Deployment: pushed to `main`.
+
 ### 2026-10-25 Europe/London — Claude (qualifications)
 
 - Commit: included in this commit
