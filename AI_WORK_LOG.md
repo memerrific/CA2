@@ -23,6 +23,16 @@ After making any change:
 ## Entry template
 
 ```text
+### 2026-10-25 Europe/London — Claude (qualifications)
+
+- Commit: included in this commit
+- Files changed: `index.html`, `about.html`, `styles.css` (new `.quals` block at the end), `tools/site_shared.py` and all pages (asset version 20261025-2)
+- Completed: Homepage hero trust list now follows Callum's LinkedIn certifications: Established 2019, Heat Geek trained, Level 3 heat pump qualified, OFTEC certified, Unvented hot water (G3), Water Regulations qualified. "East & West Sussex" and "Reply within one working day" removed from the homepage. New "Qualifications" section on `about.html` lists each certificate with issuer, validity and credential ID (G3 has no ID on LinkedIn).
+- Wording rules: say "Level 3 heat pump qualified" (BPEC), never "MCS". OFTEC is assessed by NICEIC, expires March 2030; WRB Nov 2028; G3 Jun 2028. Update the About page when these renew.
+- Checks performed: homepage and about page at 1440px and 390px; no JS errors or horizontal overflow.
+- Deployment: pushed to `main`.
+- Pending / hand-over: service pages (`tools/build_services.py`) and town pages (`tools/build_towns.py`) still show the old trust list ("OFTEC qualified ... East & West Sussex / Reply within one working day"); not changed yet, awaiting Callum's decision.
+
 ### 2026-10-25 Europe/London — Claude
 
 - Commit: included in this commit

@@ -1923,3 +1923,9 @@ textarea {
 /* Left-to-right layout: every section uses the same full-width gutter */
 .wrap { width: calc(100% - 64px); max-width: none; }
 @media (max-width: 600px) { .wrap { width: calc(100% - 28px); } }
+.quals-section h2 { font-size: clamp(2rem, 3vw, 3.2rem); line-height: 1; margin: 12px 0 30px; max-width: 720px; }
+.quals { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: #d8dcda; }
+.quals li { background: white; padding: 28px 22px; border-top: 4px solid var(--orange); }
+.quals li:nth-child(even) { background: #f8f9f8; }
+.quals h3 { margin: 0 0 10px; font-size: 1.05rem; line-height: 1.15; }
+.quals p { margin: 0; color: #566066; font-size: .9rem; }
