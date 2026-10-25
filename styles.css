@@ -151,26 +151,29 @@ img {
 .hero:before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 18%;
   background-image: url("assets/plant-room-wide-hd.webp?v=20261016-1");
-  background-position: right bottom;
+  background-position: right center;
   background-repeat: no-repeat;
-  background-size: auto 140%;
+  background-size: cover;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    transparent 20%,
-    rgba(0, 0, 0, 0.1) 28%,
-    rgba(0, 0, 0, 0.58) 40%,
-    #000 56%
+    rgba(0, 0, 0, 0.12) 14%,
+    rgba(0, 0, 0, 0.45) 30%,
+    rgba(0, 0, 0, 0.82) 46%,
+    #000 60%
   );
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    transparent 20%,
-    rgba(0, 0, 0, 0.1) 28%,
-    rgba(0, 0, 0, 0.58) 40%,
-    #000 56%
+    rgba(0, 0, 0, 0.12) 14%,
+    rgba(0, 0, 0, 0.45) 30%,
+    rgba(0, 0, 0, 0.82) 46%,
+    #000 60%
   );
   z-index: 0;
 }
@@ -181,11 +184,10 @@ img {
   background: linear-gradient(
     90deg,
     #08151c 0%,
-    rgba(8, 21, 28, 0.98) 25%,
-    rgba(8, 21, 28, 0.86) 36%,
-    rgba(8, 21, 28, 0.48) 50%,
-    rgba(8, 21, 28, 0.12) 68%,
-    rgba(8, 21, 28, 0) 82%
+    rgba(8, 21, 28, 0.9) 22%,
+    rgba(8, 21, 28, 0.55) 36%,
+    rgba(8, 21, 28, 0.18) 52%,
+    rgba(8, 21, 28, 0) 66%
   );
   pointer-events: none;
   z-index: 1;
@@ -1510,6 +1512,7 @@ textarea {
     min-height: 600px;
   }
   .hero:before {
+    left: 0;
     background-image: url("assets/plant-room-wide-hd.webp?v=20261016-1");
     background-position: 60% center;
     background-size: cover;

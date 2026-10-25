@@ -23,6 +23,15 @@ After making any change:
 ## Entry template
 
 ```text
+### 2026-10-25 Europe/London — Claude
+
+- Commit: included in this commit
+- Files changed: `styles.css`, `tools/site_shared.py` (ASSET_VERSION), all pages (asset version bump to 20261025-1)
+- Completed: Homepage hero fade fixed on wide screens. The photo was sized from the hero height and anchored right, so on screens wider than about 2000px it stopped short of the fade and showed a hard edge. The photo now sits in a box from 18% to the right edge (`background-size: cover`), so it always fills that area, and the fade is measured across the photo itself, starting further left. The dark overlay behind the headline is slightly lighter to match. Mobile is unchanged (full-bleed photo).
+- Checks performed: homepage at 390, 1280, 1440, 1880, 2560 and 3440px wide.
+- Deployment: pushed to `main`.
+- Pending / hand-over: `tools/site_shared.py` ASSET_VERSION was behind the pages (20261015-6 vs 20261016-3); now in step.
+
 ### YYYY-MM-DD HH:MM Europe/London — Claude or ChatGPT/Codex
 
 - Commit: full SHA or “included in this commit”
